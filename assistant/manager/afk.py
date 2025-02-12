@@ -66,7 +66,7 @@ async def make_change(event):
         name = get_display_name(event.sender)
         cha_send = chat_[event.sender_id]
         time_ = time_formatter((dt.now() - cha_send["time"]).seconds * 1000)
-        msg = f"**{name}** is No Longer AFK!\n**Was AFK for** {time_}"
+        msg = f"**{name}** is No Longer AFK!\n**Was AFK for** {time_}\n\n**Join : @PythonBotz**"
         await event.reply(msg)
         del chat_[event.sender_id]
         if not chat_:
@@ -79,7 +79,7 @@ async def make_change(event):
             s_der = chat_[replied.sender_id]
             res_ = s_der["reason"]
             time_ = time_formatter((dt.now() - s_der["time"]).seconds * 1000)
-            msg = f"**{name}** is AFK Currently!\n**From :** {time_}"
+            msg = f"**{name}** is AFK Currently!\n**From :** {time_}\n\n**Join : @PythonBotz**"
             if res_ and isinstance(res_, str):
                 msg += f"\n**Reason :** {res_}"
             elif res_ and isinstance(res_, Message):
@@ -102,7 +102,7 @@ async def make_change(event):
             name = get_display_name(entity)
             res_ = s_der["reason"]
             time_ = time_formatter((dt.now() - s_der["time"]).seconds * 1000)
-            msg = f"**{name}** is AFK Currently!\n**From :** {time_}"
+            msg = f"**{name}** is AFK Currently!\n**From :** {time_}\n\n**Join : @PythonBotz**"
             if res_ and isinstance(res_, str):
                 msg += f"\n**Reason :** {res_}"
             elif res_ and isinstance(res_, Message):
